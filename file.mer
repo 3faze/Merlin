@@ -1,0 +1,4 @@
+PRINT "1+6/3"
+EVAL (1+6/3)
+PRINT "Closing..."
+WAIT 1.3
