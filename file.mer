@@ -1,0 +1,4 @@
+PRINT "Hello World"
+PRINT "1 + 2"
+EVAL (1 + 2)
+QUIT
