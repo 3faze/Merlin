@@ -1,7 +1,11 @@
 import time
 
 time.sleep(1)
-file_path = input("File:")
+
+vars = {}
+var_names = []
+
+file_path = input("File: ")
 
 file = open(file_path, "r+")
 file_read = file.read()
@@ -15,6 +19,9 @@ for i in conts:
                 if '"' in stri[1]:
                     fin = stri[1].split('"')
                     print(fin[1])
+                for j in var_names:
+                    if j in stri[1]:
+                        print(vars[j])
             except:
                 try:
                     stri = i.split("PRINT")
@@ -38,6 +45,21 @@ for i in conts:
                 print(eval(fin2[0]))
             except:
                 print("Couldn't execute the expression")
-        
+
+        elif "AUTO" in i:
+            try:
+                stri = i.split("AUTO")
+                fin1 = stri[1].split(" ")
+                var_name = fin1[1]
+                var_names.append(var_name)
+                if '"' in fin1[3]:
+                    fin2 = fin1[3].split('"')
+                    var_value = fin2[1]
+                else:
+                    var_value = fin1[3]
+                vars[var_name] = var_value
+            except:
+                print("Couldn't define variable.")
+
         elif "QUIT" in i:
             quit()
