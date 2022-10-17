@@ -1,65 +1,31 @@
-import time
+try:
 
-time.sleep(1)
+ 51                 stri = i.split("AUTO")
 
-vars = {}
-var_names = []
+ 52                 fin1 = stri[1].split(" ")                  53                 var_name = fin1[1]                         54                 var_names.append(var_name)
 
-file_path = input("File: ")
+ 55                 if '"' in fin1[3]:
 
-file = open(file_path, "r+")
-file_read = file.read()
+ 56                     fin2 = fin1[3].split('"')
 
-conts = file_read.split("\n")  
-for i in conts:
-    if i != "" or i != " ":
-        if "PRINT " in i:                                                         
-            try:
-                stri = i.split("PRINT")
-                if '"' in stri[1]:
-                    fin = stri[1].split('"')
-                    print(fin[1])
-                for j in var_names:
-                    if j in stri[1]:
-                        print(vars[j])
-            except:
-                try:
-                    stri = i.split("PRINT")
-                    fin = stri[1]
-                    print(fin)
-                except:
-                    print("Couldn't print the number.")
-        elif "WAIT" in i:                                                        
-            try:
-                stri = i.split("WAIT")
-                fin = stri[1]
-                time.sleep(float(fin))
-            except:
-                print("Couldn't delay the program.")
+ 57                     var_value = fin2[1]                    58                 elif "TRUE" or "FALSE" in fin1[3]:
 
-        elif "EVAL" in i:
-            try:
-                stri = i.split("EVAL")
-                fin1 = stri[1].split("(")
-                fin2 = fin1[1].split(")")
-                print(eval(fin2[0]))
-            except:
-                print("Couldn't execute the expression")
+ 59                     if "TRUE" in fin1[3]:
 
-        elif "AUTO" in i:
-            try:
-                stri = i.split("AUTO")
-                fin1 = stri[1].split(" ")
-                var_name = fin1[1]
-                var_names.append(var_name)
-                if '"' in fin1[3]:
-                    fin2 = fin1[3].split('"')
-                    var_value = fin2[1]
-                else:
-                    var_value = fin1[3]
-                vars[var_name] = var_value
-            except:
-                print("Couldn't define variable.")
+ 60                         var_value = "True"
 
-        elif "QUIT" in i:
-            quit()
+ 61                     elif "FALSE" in fin1[3]:
+
+ 62                         var_value = "False"
+
+ 63                 elif "NULL" in fin1[3]:
+
+ 64                     var_value = "None"                     65                 else:
+
+ 66                     var_value = fin1[3]                    67                 varis[var_name] = var_value
+
+ 68                 print(varis)
+
+ 69             except:
+
+ 70                 print("Couldn't define variable.")
