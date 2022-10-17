@@ -2,126 +2,88 @@ import time
 
 time.sleep(1)
 
-varis = {}
-
+vars = {}
+inps = {}
 var_names = []
+types = ['Null', 'True', 'False']
 
 file_path = input("File: ")
 
 file = open(file_path, "r+")
-
 file_read = file.read()
 
-conts = file_read.split("\n")
-
+conts = file_read.split("\n")  
 for i in conts:
-
-    if i != "" or i != " ":
-
-        if "PRINT " in i:
-
+    if i != "" or i != " " or "//" not in i:
+        if "PRINT " in i:                                                       
             try:
-
                 stri = i.split("PRINT")
-
                 if '"' in stri[1]:
-
                     fin = stri[1].split('"')
-
                     print(fin[1])
-
+                for x in types:
+                    if x in stri[1]:
+                        print(x)
                 for j in var_names:
-
                     if j in stri[1]:
-
-                        print(varis[j])
+                        print(vars[j])
+                for y in inps:
+                    if y in i and '"' not in i:
+                        print(inps[y])
 
             except:
-
                 try:
-
                     stri = i.split("PRINT")
-
                     fin = stri[1]
-
                     print(fin)
-
                 except:
-
                     print("Couldn't print the number.")
-
-        elif "WAIT" in i:
-
+        elif "WAIT" in i:                                                        
             try:
-
                 stri = i.split("WAIT")
-
                 fin = stri[1]
-
                 time.sleep(float(fin))
-
             except:
-
                 print("Couldn't delay the program.")
 
         elif "EVAL" in i:
-
             try:
-
                 stri = i.split("EVAL")
-
                 fin1 = stri[1].split("(")
-
                 fin2 = fin1[1].split(")")
-
                 print(eval(fin2[0]))
-
             except:
-
                 print("Couldn't execute the expression")
 
-        elif "AUTO" in i:
-
+        elif "VAR" in i:
             try:
-
-                stri = i.split("AUTO")
-
+                stri = i.split("VAR")
                 fin1 = stri[1].split(" ")
-
                 var_name = fin1[1]
-
                 var_names.append(var_name)
-
-                if '"' in fin1[3]:
-
+                if '"' in fin1[3] and "VAR" in i:
                     fin2 = fin1[3].split('"')
-
                     var_value = fin2[1]
-
-                elif "TRUE" or "FALSE" in fin1[3]:
-
-                    if "TRUE" in fin1[3]:
-
-                        var_value = "True"
-
-                    elif "FALSE" in fin1[3]:
-
-                        var_value = "False"
-
-                elif "NULL" in fin1[3]:
-
-                    var_value = "None"
-
+                elif "Null" in i and "VAR" in i:
+                    var_value = fin1[3]
                 else:
-
-                    var_value = fin1[3]                                                                                                                                                          varis[var_name] = var_value
-
-                print(varis)
-
+                    if "AUTO" in i:
+                        var_value = fin1[3]
+                vars[var_name] = var_value
             except:
+                print("Couldn't define variable.")
 
-                print("Couldn't define variable.")                                                                                                                               
+        elif "INPUT" in i:
+            try:
+                stri_inp = i.split("INPUT")
+                inp_fin1 = stri_inp[1].split(" ")
+                txt_get = stri_inp[1].split('"')[1]
+                a = input(txt_get)
+                txt = a
+                txt_var = inp_fin1[4]
+                inps[txt_var] = txt
+            except:
+                print("Couldn't do an input.")
 
         elif "QUIT" in i:
-
             quit()
