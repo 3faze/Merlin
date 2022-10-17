@@ -1,4 +1,25 @@
 PRINT "Hello World"
 PRINT "1 + 2"
 EVAL (1 + 2)
+//Variables
+
+VAR hello = "Hi"
+VAR int = 10
+VAR float = 1.0
+VAR null = Null
+VAR true = True
+VAR false = False
+
+//Printing data types
+PRINT Null
+PRINT True
+PRINT False
+
+//Testing the inputs
+INPUT "Hallo: " => first
+
+// -------
+PRINT first
+
+// Close the program
 QUIT
