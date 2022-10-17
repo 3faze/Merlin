@@ -69,6 +69,9 @@ for i in conts:
                 else:
                     if "AUTO" in i:
                         var_value = fin1[3]
+                    else:
+                        if "True" not in i or "False" not in i:
+                            print("Wrong data type")
                 vars[var_name] = var_value
             except:
                 print("Couldn't define variable.")
