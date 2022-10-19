@@ -6,13 +6,13 @@
 
 ### Print Statements
 
-Strings - PRINT "This is text"
-Integers/Floats - PRINT 10
+Strings - PRINT "This is text"<br>
+Integers/Floats - PRINT 10<br>
 Variables - PRINT var_name
 
 ### Eval operations
 
-Simple operations - EVAL (OPERATION)
+Simple operations - EVAL (OPERATION)<br>
 Example - EVAL(1 / 2 + 5 * 2)
 
 ### Variables
@@ -20,7 +20,7 @@ Example - EVAL(1 / 2 + 5 * 2)
 Variables may be defined using the following syntax:<br>
 <b>Spaces on a variable name will cause errors. You may not use them.</b>
 
-VAR varname = value
+VAR varname = value<br>
 
 ### Inputs
 
@@ -33,7 +33,7 @@ Inputs may be defined using "=>".
 
 #### Wait
 
-WAIT 1
+WAIT 1<br>
 WAIT 1.0
 
 ### Quit
