@@ -15,11 +15,12 @@ PRINT Null
 PRINT True
 PRINT False
 
-//Testing the inputs
-INPUT "Hallo: " => first
+//Inputs
+INPUT "This is an input: " => first
 
-// -------
+//Printing an input
 PRINT first
 
 // Close the program
+WAIT 1
 QUIT
