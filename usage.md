@@ -31,7 +31,7 @@ Inputs may be defined using "=>".
  
 ### Additional functionalities
 
-### Wait
+#### Wait
 
 WAIT 1
 WAIT 1.0
@@ -41,4 +41,6 @@ WAIT 1.0
 QUIT
 
 
-That's it for now.
+### File
+
+Files may have the ".mer" extension.
