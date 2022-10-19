@@ -18,8 +18,8 @@ Example - EVAL(1 / 2 + 5 * 2)
 
 ### Variables
 
-Variables may be defined using the following syntax:
-<b>Spaces on a variable name will cause errors. You may not use them.
+Variables may be defined using the following syntax:<br>
+<b>Spaces on a variable name will cause errors. You may not use them.</b>
 
 VAR varname = value
   
