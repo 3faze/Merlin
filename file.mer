@@ -3,7 +3,7 @@ PRINT "1 + 2"
 EVAL (1 + 2)
 //Variables
 
-VAR hello = "Hi"
+VAR hello = "Hi World"
 VAR int = 10
 VAR float = 1.0
 VAR null = Null
@@ -22,7 +22,12 @@ INPUT "This is an input: " => first
 PRINT first
 
 //For Loops
-FOR i TO 10 DO (PRINT "For loop")
+FOR i TO 3 DO (PRINT "This is a for loop.")
+
+//Testing flow control
+IF int == 10 DO (PRINT "Int's value is 10")
+IF hello == "Hi World" DO (PRINT "Hello's value is Hi World")
+IF float == 1.0 DO (PRINT "Float is 1.0")
 
 // Close the program
 WAIT 1
