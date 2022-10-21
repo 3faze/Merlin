@@ -21,6 +21,9 @@ INPUT "This is an input: " => first
 //Printing an input
 PRINT first
 
+//For Loops
+FOR i TO 10 DO (PRINT "For loop")
+
 // Close the program
 WAIT 1
 QUIT
