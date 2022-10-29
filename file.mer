@@ -28,6 +28,7 @@ FOR i TO 3 DO (PRINT "This is a for loop.")
 IF int == 10 DO (PRINT "Int's value is 10")
 IF hello == "Hi World" DO (PRINT "Hello's value is Hi World")
 IF float == 1.0 DO (PRINT "Float is 1.0")
+WAIT 1.0
 
 // Close the program
 WAIT 1
