@@ -1,5 +1,5 @@
 import time
-import random
+import sys
 
 time.sleep(1)
 
@@ -84,7 +84,7 @@ inps = {}
 var_names = []
 types = ['Null', 'True', 'False']
 
-file_path = input("File: ")
+file_path = sys.argv[1]
 
 file = open(file_path, "r+")
 file_read = file.read()
